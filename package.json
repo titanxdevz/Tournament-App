@@ -1,0 +1,22 @@
+{
+  "name": "xentronix-monorepo",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  },
+  "lint-staged": {
+    "backend/src/**/*.ts": [
+      "tsc -p backend/tsconfig.json --noEmit"
+    ],
+    "admin_panel/app/**/*.{ts,tsx}": [
+      "npm --prefix admin_panel run lint"
+    ],
+    "user_app/lib/**/*.dart": [
+      "flutter format"
+    ]
+  }
+}
