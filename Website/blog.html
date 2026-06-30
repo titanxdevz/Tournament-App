@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B0F19" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FF7A18'/%3E%3Ctext y='.8em' font-size='70' fill='white' text-anchor='middle' x='50' font-family='sans-serif' font-weight='bold'%3ET%3C/text%3E%3C/svg%3E" />
+  <title>Blog — Tufani Tournament</title>
+  <meta name="description" content="Tufani Tournament blog — Free Fire tournament tips, esports news, winner stories, and platform updates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-header {
+      padding: 140px 5% 60px;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,122,24,0.1) 0%, transparent 60%), var(--void);
+    }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0 5% 80px;
+      max-width: 1280px; margin: 0 auto;
+    }
+    .blog-card {
+      background: var(--card); border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: var(--transition);
+    }
+    .blog-card:hover { transform: translateY(-4px); border-color: rgba(255,122,24,0.2); box-shadow: var(--shadow-card); }
+    .blog-thumb {
+      height: 180px; background: var(--deep); display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; color: var(--blaze); border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .blog-body { padding: 24px; }
+    .blog-category {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--blaze); margin-bottom: 8px;
+    }
+    .blog-body h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+    .blog-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    .blog-meta {
+      font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px;
+    }
+    .blog-card.featured { grid-column: span 2; display: flex; }
+    .blog-card.featured .blog-thumb { width: 40%; height: auto; }
+    .blog-card.featured .blog-body { flex: 1; }
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-card.featured { grid-column: span 2; flex-direction: column; }
+      .blog-card.featured .blog-thumb { width: 100%; height: 180px; }
+    }
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card.featured { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-logo">TUFANI</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fa-solid fa-fire"></i></div>
+        <span class="logo-text">TUFANI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#tournaments">Tournaments</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#leaderboard">Leaderboard</a></li>
+        <li><a href="index.html#wallet">Wallet</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#" class="btn-nav outline">Sign In</a>
+        <a href="download.html" class="btn-nav filled">Download App</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#tournaments" class="mobile-link">Tournaments</a>
+    <a href="index.html#how-it-works" class="mobile-link">How It Works</a>
+    <a href="index.html#leaderboard" class="mobile-link">Leaderboard</a>
+    <a href="index.html#wallet" class="mobile-link">Wallet</a>
+    <a href="index.html#faq" class="mobile-link">FAQ</a>
+    <div class="mobile-btns">
+      <a href="#" class="btn-nav outline">Sign In</a>
+      <a href="download.html" class="btn-nav filled">Download</a>
+    </div>
+  </div>
+
+  <section class="blog-header">
+    <div class="section-label">Blog</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);">Tufani <span>Stories</span></h1>
+    <p class="hero-sub" style="max-width:520px;">Free Fire tournament tips, esports news, champion stories, and platform updates — straight from the Tufani team.</p>
+  </section>
+
+  <div class="blog-grid">
+    <div class="blog-card featured">
+      <div class="blog-thumb"><i class="fa-solid fa-trophy"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Platform Update</span>
+        <h3>Introducing Same-Day Withdrawals — No More Waiting</h3>
+        <p>We heard you. Starting this week, all withdrawal requests submitted before 6 PM IST are processed and credited the same day. Here's how it works and what changed behind the scenes.</p>
+        <div class="blog-meta">
+          <span><i class="fa-regular fa-calendar"></i> June 28, 2025</span>
+          <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-thumb"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Anti-Cheat</span>
+        <h3>How Our AI Detects Cheaters Before They Ruin Your Match</h3>
+        <p>A deep dive into the machine learning models that flag suspicious gameplay patterns in real-time.</p>
+        <div class="blog-meta">
+          <span>June 22, 2025</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-thumb"><i class="fa-solid fa-user"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Player Story</span>
+        <h3>From Tier-3 City to ₹42,500 in Winnings — Suresh's Story</h3>
+        <p>A Chennai-based player went from casual gaming to consistent tournament earnings. Here's his exact strategy and routine.</p>
+        <div class="blog-meta">
+          <span>June 18, 2025</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-thumb"><i class="fa-solid fa-bolt"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Tips & Tricks</span>
+        <h3>10 Free Fire Settings Pros Use That You Probably Don't</h3>
+        <p>Small tweaks to your sensitivity, HUD layout, and sound settings that can instantly improve your K/D ratio.</p>
+        <div class="blog-meta">
+          <span>June 12, 2025</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-thumb"><i class="fa-solid fa-ranking-star"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Leaderboard</span>
+        <h3>May 2025 Leaderboard Wrap — The Season's Biggest Earners</h3>
+        <p>SK_Tufani47 takes the top spot with ₹34,500 in May earnings. See who else made the cut and what tournaments paid the most.</p>
+        <div class="blog-meta">
+          <span>June 5, 2025</span>
+          <span>3 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-thumb"><i class="fa-brands fa-discord"></i></div>
+      <div class="blog-body">
+        <span class="blog-category">Community</span>
+        <h3>Discord Giveaway Recap — ₹50,000 in Prizes Given Away in May</h3>
+        <p>From free tournament entries to bonus wallet cash, here's everything we gave away to our Discord community last month.</p>
+        <div class="blog-meta">
+          <span>June 1, 2025</span>
+          <span>4 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i class="fa-solid fa-fire"></i></div>
+            <span class="logo-text">TUFANI</span>
+          </a>
+          <p class="footer-desc">India's most competitive Free Fire esports tournament platform. Built by players, for players.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" title="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="social-btn" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="index.html#tournaments">Tournaments</a>
+          <a href="index.html#leaderboard">Leaderboard</a>
+          <a href="index.html#wallet">Wallet</a>
+          <a href="referral.html">Referral</a>
+          <a href="download.html">Download App</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="press-kit.html">Press Kit</a>
+          <a href="blog.html">Blog</a>
+          <a href="partner.html">Partner With Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="tos.html">Terms of Service</a>
+          <a href="policy.html">Privacy Policy</a>
+          <a href="responsible-gaming.html">Responsible Gaming</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="cookie.html">Cookie Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Tufani Tournament Pvt. Ltd. All rights reserved.</span>
+        <span><i class="fa-solid fa-fire" style="margin-right:4px;"></i> Made with passion for Indian gamers</span>
+        <span style="display:flex;align-items:center;gap:6px;">
+          <span style="width:8px;height:8px;background:#52C41A;border-radius:50%;box-shadow:0 0 6px #52C41A;display:inline-block;"></span>
+          All systems operational
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
